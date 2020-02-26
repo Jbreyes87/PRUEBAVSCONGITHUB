@@ -1,0 +1,103 @@
+comando para ver version de git:
+
+ git --version
+
+--------------------------------------------------------------------
+crear usuario:
+
+git config --global user.name "johnrl"
+git config --global user.email "jreyes@hotmail.es"
+
+--------------------------------------------------------------------
+
+verificar usuario creado:
+ git config --global -e
+-------------------------------------------------------------------
+
+creacion de repositorio:
+ git init 
+-------------------------------------------------------------------
+
+como ver los archivos de mi proyecto:
+ ls -al
+-------------------------------------------------------------------
+comando para revisar mis archivos en el stage:
+ git status -s
+-------------------------------------------------------------------
+formas de agregar archivos al stage:
+
+git add . 
+git add *.png
+git add css/
+git add img/*.png
+git add -- .
+git add -A  
+
+------------------------------------------------------------------
+realizar archivos del stage al commit
+ git commit -m "nombre del commit"
+------------------------------------------------------------------
+enviar commit defrente sin estar en el stage:
+git commit -am "nombre del commit"
+-----------------------------------------------------------------------------
+como recuperar un archivo borrado por equivocacion:
+ git checkout --. / git checkout --index.html
+------------------------------------------------------------------------------
+ver mis commits:
+git log --oneline
+------------------------------------------------------
+ver los cambios que he echo a mis archivos :
+  git diff
+  git diff --staged
+----------------------------------------------------------------------------
+como mover el archivo del staged:
+ git reset head index.html
+
+---------------------------------------------------------------------------
+
+comando para modificar el nombre del commit:
+  git commit --amend -m " cambiar el nombre"
+ 
+para guardar el cambio ponemos tecla Esc/ :wq/enter
+-----------------------------------------------------------------------------
+
+viajar en el tiempo de los commits:
+
+  git reset --soft 02
+  con el reset soft lo mandamos al staged 
+
+  git reset --hard 02
+  con el --hard estamos eliminando el commit 01 barrando los archivos 
+
+---------------------------------------------------------------------------------------------
+como recuperar commits eliminados :
+   git reflog    ---> este comando nos muestra todos los commits hasta los eliminados
+  para recuperarlo usamos el ---> git reset --hard 01
+
+--------------------------------------------------------------------------------------------------------------
+
+crear rama :
+ git branch "nombre de la rama"
+
+como ver mis ramas:
+   git branch 
+
+como moverme a otra rama:
+  git checkout     nombre de la rama
+
+ver las diferencia entre las ramas:
+  git diff rama-desarrollo  master
+
+como unir Ramas:
+ paso1- viajar a la rama master :
+    git checkout master 
+ paso2- unimos la rama:
+    git merge rama-desarrollo
+
+eliminar rama:
+   git branch -d rama-desarrollo
+
+subir Repositorio a github:
+$ git remote add origin https://github.com/Jbreyes87/WebApiReyesCore2.2.6.git
+$ git push -u origin master
+
